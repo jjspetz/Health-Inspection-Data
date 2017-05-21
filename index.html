@@ -13,8 +13,6 @@
     margin: 1em auto;
   }
   #googft-mapCanvas {
-  height: 300px;
-  width: 500px;
   margin: 0 auto;
 }
 </style>
@@ -31,16 +29,15 @@
       viewport.setAttribute('content', 'initial-scale=1.0, user-scalable=no');
     }
     var mapDiv = document.getElementById('googft-mapCanvas');
-    mapDiv.style.width = isMobile ? '100%' : '500px';
-    mapDiv.style.height = isMobile ? '100%' : '300px';
+    mapDiv.style.width = isMobile ? '100%' : '800px';
+    mapDiv.style.height = isMobile ? '100%' : '500px';
     var map = new google.maps.Map(mapDiv, {
-      center: new google.maps.LatLng(29.66208338544705, -95.09731070859378),
-      zoom: 9,
+      center: new google.maps.LatLng(29.8, -95.3),
+      zoom: 10,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
     map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend-open'));
     map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend'));
-
     layer = new google.maps.FusionTablesLayer({
       map: map,
       heatmap: { enabled: false },
@@ -72,7 +69,24 @@
       }
     }
   }
-
+  function changeMap_0() {
+    var whereClause;
+    var searchString = document.getElementById('search-string_0').value.replace(/'/g, "\\'");
+    if (searchString != '--Select--') {
+      whereClause = "'FacilityName' CONTAINS IGNORING CASE '" + searchString + "'";
+    }
+    layer.setOptions({
+      query: {
+        select: "'Concatenated Address'",
+        from: "1u9j3NqGkNprU0b9qNRmMiXBjdszHtjSimgymC49F",
+        where: whereClause
+      },
+      options: {
+        styleId: 2,
+        templateId: 3
+      }
+    });
+  }
   google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 </head>
@@ -81,6 +95,13 @@
   <main>
     <h1>Do I Want to Eat Here?</h1>
     <div id="googft-mapCanvas"></div>
+    <div style="margin-top: 10px;">
+      <label class="layer-wizard-search-label">
+        Restaurant Name
+        <input type="text" id="search-string_0">
+        <input type="button" onclick="changeMap_0()" value="Search">
+      </label>
+    </div>
   </main>
 </body>
 </html>
