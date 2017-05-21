@@ -2,18 +2,33 @@
 <html>
 <head>
 <meta name="viewport"></meta>
-<title>COH FY Health Inspection Results Button - Google Fusion Tables</title>
+<link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+<title>Where to Eat - Google Fusion Tables</title>
 <style type="text/css">
   body {
     margin: 0;
     text-align: center;
+    color: #D90368;
+    background-image: url("https://image.shutterstock.com/z/stock-photo-restaurant-diner-278359625.jpg");
+  }
+  h1 {
+    font-family: 'Monoton', cursive;
+    font-size: 44pt;
   }
   main {
     width: 80%;
     margin: 1em auto;
   }
+  .layer-wizard-search-label {
+    font-size: 20pt;
+    background: lightgray;
+    padding: 3px;
+    border: 1px solid #4D99FF;
+    border-radius: 5px;
+  }
   #googft-mapCanvas {
   margin: 0 auto;
+  border: 2px solid #4D99FF;
 }
 </style>
 
@@ -97,9 +112,9 @@
     <div id="googft-mapCanvas"></div>
     <div style="margin-top: 10px;">
       <label class="layer-wizard-search-label">
-        Restaurant Name
+        Restaurant Name:
         <input type="text" id="search-string_0">
-        <input type="button" onclick="changeMap_0()" value="Search">
+        <input class="button" type="button" onclick="changeMap_0()" value="Search">
       </label>
     </div>
   </main>
