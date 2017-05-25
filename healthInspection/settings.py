@@ -82,11 +82,11 @@ WSGI_APPLICATION = 'healthInspection.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'myproject',
-        'USER': 'myprojectuser',
-        'PASSWORD': 'password',
+        'NAME': 'postgres',
+        'USER': 'jjspetz',
+        'PASSWORD': os.environ.get('SECRET_POSTGRES', 'dev'),
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5432',
     }
 }
 
