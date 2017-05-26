@@ -4,7 +4,7 @@ env.hosts = ['45.32.192.195']
 env.user = 'jjspetz'
 
 DIR = '/home/jjspetz/HoustonHack'
-VENV = 'source /home/jjspetz/.virtualenvs/HoustonHack/bin/activate && source SECRETS.ENV'
+VENV = 'source /home/jjspetz/.virtualenvs/health/bin/activate && source SECRETS.ENV'
 
 def start ():
   with cd(DIR):
