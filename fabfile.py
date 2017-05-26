@@ -9,7 +9,7 @@ VENV = 'source /home/jjspetz/.virtualenvs/health/bin/activate && source SECRETS.
 def start ():
   with cd(DIR):
     with prefix(VENV):
-      run('pm2 start uwsgi -- --ini uwsgi.ini > start.log')
+      run('pm2 start `which uwsgi` -- --ini uwsgi.ini > start.log')
 
 def stop ():
   run('pm2 stop all > stop.log')
