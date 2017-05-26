@@ -3,7 +3,7 @@ from fabric.api import run, env, sudo, cd, prefix
 env.hosts = ['45.32.192.195']
 env.user = 'jjspetz'
 
-DIR = '/home/jjspetz/healthinspections'
+DIR = '/home/jjspetz/HoustonHack'
 VENV = 'source /home/jjspetz/.virtualenvs/dj-exercise/bin/activate && source SECRETS.ENV'
 
 def start ():
