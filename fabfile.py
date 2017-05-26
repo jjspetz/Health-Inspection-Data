@@ -4,12 +4,12 @@ env.hosts = ['45.32.192.195']
 env.user = 'jjspetz'
 
 DIR = '/home/jjspetz/HoustonHack'
-VENV = 'source /home/jjspetz/.virtualenvs/HoustonHack/bin/activate && source SECRETS.ENV'
+VENV = 'source /home/jjspetz/.virtualenvs/health/bin/activate && source SECRETS.ENV'
 
 def start ():
   with cd(DIR):
     with prefix(VENV):
-      run('pm2 start uwsgi -- --ini uwsgi.ini > start.log')
+      run('pm2 start `which uwsgi` -- --ini uwsgi.ini > start.log')
 
 def stop ():
   run('pm2 stop all > stop.log')
