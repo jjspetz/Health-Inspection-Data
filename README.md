@@ -4,10 +4,10 @@
 It's a web app that displays a map of houston restuatants and lets you check if they have passed their last health inspection.
 
 ### Technology
-Javascript
-HTML/CSS
-Django
-Postgres
+Javascript,   
+HTML/CSS,  
+Django,  
+Postgres,  
 Google Fusion Tables
 
 ### Preview
