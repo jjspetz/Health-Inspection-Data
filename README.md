@@ -14,7 +14,7 @@ Google Fusion Tables
 ![Doiwanttoeatthere.com](/webapp.png)
 
 ### Hackathon Challenges
-Problem: We built a back-end for our site but were not able to connect our server to our domain correctly
+Problem: We built a back-end for our site but were not able to connect our server to our domain correctly.  
 Solution: We temporaryly solved this by using Google Fusion Tables and javascript but this has left our project less responsive and currently it does not work on mobile.
 
 
