@@ -10,10 +10,13 @@ Django
 Postgres
 Google Fusion Tables
 
-### Challenges
-1. We built a back-end for our site but were not able to connect our server to our domain correctly
-- We temporaryly solved this by using Google Fusion Tables and javascript but this has left our project useless on mobile
+### Preview
+![Doiwanttoeatthere.com](/webapp.png)
+
+### Hackathon Challenges
+Problem: We built a back-end for our site but were not able to connect our server to our domain correctly
+Solution: We temporaryly solved this by using Google Fusion Tables and javascript but this has left our project less responsive and currently it does not work on mobile.
 
 
 ### Going Forward
-We want to finish our backend and add alternative search features. We are also looking into filtering out map by neighborhood.
+We want to fully utilize our back end to handle all searches and filtering, and add alternative search features. We may also looking into filtering out map by neighborhood.
