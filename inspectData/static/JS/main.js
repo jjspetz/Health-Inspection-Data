@@ -5,7 +5,7 @@ document.body.style.background =
 document.body.style.backgroundSize = "cover";
 
 // globals
-var layer, pass, fail;
+var layer, pass, fail, map;
 
 // declarations
 pass = document.getElementById('pass');
@@ -24,7 +24,7 @@ function initialize() {
   var mapDiv = document.getElementById('googft-mapCanvas');
   mapDiv.style.width = isMobile ? '100%' : '70%';
   mapDiv.style.height = isMobile ? '80vh' : '60vh';
-  var map = new google.maps.Map(mapDiv, {
+  map = new google.maps.Map(mapDiv, {
     center: new google.maps.LatLng(29.8, -95.3),
     zoom: 10,
     mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -84,6 +84,3 @@ function filterMap() {
   });
 }
 google.maps.event.addDomListener(window, 'load', initialize);
-
-// pass.addEventListener('click', filterMap());
-// fail.addEventListener('click', filterMap());

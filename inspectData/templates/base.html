@@ -11,12 +11,6 @@
 </head>
 
 <body>
-  <div id='legend'>
-    <h3>Map Key</h3>
-    passed <div class='keys' id='passkey'></div><br>
-    failed <div class='keys' id='failkey'></div><br>
-    questionable <div class='keys' id='warnkey'></div>
-  </div>
   <main>
     <h1>Do I Want to Eat There?</h1>
     <div id="googft-mapCanvas"></div>
@@ -38,6 +32,12 @@
     </div>
 
   </main>
+  <div id='legend'>
+    <h3>Map Key</h3>
+    passed <div class='keys' id='passkey'></div><br>
+    failed <div class='keys' id='failkey'></div><br>
+    questionable <div class='keys' id='warnkey'></div>
+  </div>
 </body>
 <script src="{% static 'JS/main.js' %}"></script>
 </html>

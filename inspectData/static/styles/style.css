@@ -5,7 +5,7 @@ body {
   background: #56d879;
 }
 h1 {
-  margin: 2% auto;
+  margin: 1% auto;
   width: 70%;
   font-family: 'Monoton', cursive;
   font-size: 44pt;
@@ -19,7 +19,7 @@ main {
 }
 .under-map {
   padding: 6px 0;
-  margin: 2% auto;
+  margin: 1% auto;
   font-size: 20pt;
   background: lightgray;
   width: 70%;
@@ -38,6 +38,7 @@ border: 2px solid #4D99FF;
 border-radius: 10px;
 }
 #legend {
+  display: block;
   text-align: right;
   background: rgba(150, 150, 150, 0.7);
   padding: 1%;
