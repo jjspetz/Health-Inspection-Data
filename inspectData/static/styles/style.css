@@ -18,11 +18,12 @@ main {
   margin: 1em auto;
 }
 .under-map {
+  padding: 6px 0;
   margin: 2% auto;
   font-size: 20pt;
   background: lightgray;
   width: 70%;
-  border: 2px solid #4D99FF;
+  border: 3px solid #4D99FF;
   border-radius: 5px;
 }
 .inspection-status-filter input {
@@ -67,14 +68,14 @@ border-radius: 10px;
     width: 92%;
   }
   h1 {
-    width: 100%;
+    width: calc(100% - 8px);
     font-size: 32pt;
   }
   .under-map {
-    width: 100%;
+    width: calc(100% - 6px);
     font-size: 14pt;
   }
   .under-map input{
-    max-width: 25%;
+    max-width: 26%;
   }
 }
