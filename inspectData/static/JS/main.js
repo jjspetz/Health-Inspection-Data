@@ -29,8 +29,7 @@ function initialize() {
     zoom: 10,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
-  map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend-open'));
-  map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend'));
+  map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(document.getElementById('legend'));
 
   layer = new google.maps.FusionTablesLayer({
     map: map,
@@ -47,25 +46,12 @@ function initialize() {
   });
 
   if (isMobile) {
-    var legend = document.getElementById('googft-legend');
-    var legendOpenButton = document.getElementById('googft-legend-open');
-    var legendCloseButton = document.getElementById('googft-legend-close');
-    legend.style.display = 'none';
-    legendOpenButton.style.display = 'block';
-    legendCloseButton.style.display = 'block';
-    legendOpenButton.onclick = function() {
-      legend.style.display = 'block';
-      legendOpenButton.style.display = 'none';
-    }
-    legendCloseButton.onclick = function() {
-      legend.style.display = 'none';
-      legendOpenButton.style.display = 'block';
-    }
+    document.getElementById('legend').style.display = 'none';
   }
 }
 function filterMap() {
   var whereClause;
-  var insert = [];
+  var insert = ["'dummy'"];
 
   // set up what to filter via pass/fail
   if (pass.checked) {
@@ -76,7 +62,9 @@ function filterMap() {
     insert.push("'small_red'");
   }
   insert = insert.join(', ');
+  console.log(insert);
   whereClause = "Pass_Fail IN (" + insert + ")"
+  console.log(whereClause);
 
   var searchString = document.getElementById('search-string_0').value.replace(/'/g, "\\'");
   if (searchString != '--Select--') {

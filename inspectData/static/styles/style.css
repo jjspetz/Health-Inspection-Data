@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  text-align: center;
+  color: #D90368;
+  background: #56d879;
+}
+h1 {
+  margin: 2% auto;
+  width: 70%;
+  font-family: 'Monoton', cursive;
+  font-size: 44pt;
+  background: lightgray;
+  border: 4px solid #4D99FF;
+  border-radius: 10px;
+}
+main {
+  width: 80%;
+  margin: 1em auto;
+}
+.under-map {
+  margin: 2% auto;
+  font-size: 20pt;
+  background: lightgray;
+  width: 70%;
+  border: 2px solid #4D99FF;
+  border-radius: 5px;
+}
+.inspection-status-filter input {
+  height: 20pt;
+}
+.googft-info-window {
+  text-align: left;
+}
+#googft-mapCanvas {
+margin: 0 auto;
+border: 2px solid #4D99FF;
+border-radius: 10px;
+}
+#legend {
+  text-align: right;
+  background: rgba(150, 150, 150, 0.7);
+  padding: 1%;
+  font-size: 12pt;
+}
+#legend h3{
+  text-align: center;
+  margin: 0;
+}
+.keys {
+  display: inline-block;
+  margin: 0 auto;
+  width: 12px;
+  height: 12px;
+  background: green;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+#failkey {
+  background: red;
+}
+#warnkey {
+  background: yellow;
+}
+
+@media (max-width: 700px) {
+  main {
+    width: 92%;
+  }
+  h1 {
+    width: 100%;
+    font-size: 32pt;
+  }
+  .under-map {
+    width: 100%;
+    font-size: 14pt;
+  }
+  .under-map input{
+    max-width: 25%;
+  }
+}
