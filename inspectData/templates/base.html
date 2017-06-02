@@ -9,21 +9,28 @@
     margin: 0;
     text-align: center;
     color: #D90368;
-    background-image: url("https://image.shutterstock.com/z/stock-photo-restaurant-diner-278359625.jpg");
+    background: #56d879;
   }
   h1 {
+    margin: 2% auto;
+    width: 70%;
     font-family: 'Monoton', cursive;
     font-size: 44pt;
+    background: lightgray;
+    border: 4px solid #4D99FF;
+    border-radius: 10px;
   }
   main {
     width: 80%;
     margin: 1em auto;
   }
-  .layer-wizard-search-label {
+  .map-filters {
+    margin: 2% auto;
     font-size: 20pt;
     background: lightgray;
-    padding: 3px;
-    border: 1px solid #4D99FF;
+    width: 70%;
+    padding: 5px;
+    border: 2px solid #4D99FF;
     border-radius: 5px;
   }
   #googft-mapCanvas {
@@ -39,6 +46,7 @@
 <script type="text/javascript" src="https://maps.google.com/maps/api/js?v=3&key=AIzaSyAPfR_pZpC1Qkw_CaMHPQb3nUpeB975Lnw"></script>
 
 <script type="text/javascript">
+  // map stuff
   function initialize() {
     google.maps.visualRefresh = true;
     var isMobile = (navigator.userAgent.toLowerCase().indexOf('android') > -1) ||
@@ -48,8 +56,8 @@
       viewport.setAttribute('content', 'initial-scale=1.0, user-scalable=no');
     }
     var mapDiv = document.getElementById('googft-mapCanvas');
-    mapDiv.style.width = isMobile ? '100%' : '800px';
-    mapDiv.style.height = isMobile ? '100%' : '500px';
+    mapDiv.style.width = isMobile ? '100%' : '70%';
+    mapDiv.style.height = isMobile ? '80vh' : '60vh';
     var map = new google.maps.Map(mapDiv, {
       center: new google.maps.LatLng(29.8, -95.3),
       zoom: 10,
@@ -114,13 +122,18 @@
   <main>
     <h1>Do I Want to Eat There?</h1>
     <div id="googft-mapCanvas"></div>
-    <div style="margin-top: 10px;">
-      <label class="layer-wizard-search-label">
+    <div class="map-filters">
+      Map Filters
+      <div class='inspection-status-filter'>
+
+      </div>
+      <div class='restaurant-filter'>
         Restaurant Name:
         <input type="text" id="search-string_0">
         <input class="button" type="button" onclick="changeMap_0()" value="Search">
-      </label>
+      </div>
     </div>
   </main>
 </body>
+<script src="{% static 'JS/main.js' %}"></script>
 </html>
