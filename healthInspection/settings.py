@@ -29,6 +29,7 @@ ALLOWED_HOSTS = [
     '45.32.192.195',
     'localhost',
     'health.doiwanttoeatthere.com'
+    
 ]
 
 
