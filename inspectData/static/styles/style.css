@@ -2,7 +2,7 @@ a:link, a:visited, a:active {
   color: #D90368;
   text-decoration: none;
 }
-a:hover {
+ui a:hover {
   background-color: whitesmoke;
 }
 body {
@@ -39,7 +39,7 @@ li {
 li a {
   padding: 10px 15px;
 }
-.basicView {
+.under-map {
   padding: 6px 0;
   margin: 1% auto;
   font-size: 20pt;
@@ -101,4 +101,21 @@ border-radius: 10px;
   .under-map input {
     max-width: 26%;
   }
+}
+.projectBlurb {
+  text-align: justify;
+  padding: 0 20px;
+  margin: 1% auto;
+  font-size: 14pt;
+  background: lightgray;
+  width: 70%;
+  border: 3px solid #4D99FF;
+  border-radius: 5px;
+}
+.projectBlurb h3 {
+  text-align: center;
+}
+iframe {
+  display: block;
+  margin: 1em auto;
 }

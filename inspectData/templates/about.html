@@ -1,0 +1,27 @@
+{% extends "base.html" %}{% load static %}
+
+{% block title %}About Health Inspection{% endblock %}
+
+{% block main %}
+<main>
+  <div class='projectBlurb'>
+    <h3>About Our Webapp</h3>
+    <p>
+      This webapp originally started as a project for Houston Civic Hackathon.
+      JJ Spetseris and Ryan Leon have continued to work on the project afterward
+      to give it some much needed improvments.
+      The project was built with django and has a postgres database, but do to time
+      constrants we are currently using Google Fusion Tables to populate our map
+      with over 17,000 points of data. The map displays each establishments latest
+      inspection results from 2015 and 2016, and is color coded for quick reference.
+      We used JavaScript to give users their current filter options, which include
+      searching by establishment name and filtering out passes and/or fails. Going
+      forward we would like to use our datatable to automatically update our
+      fushion tables with new data. Check out the presentation done by Ryan Leon
+      at the Hackathon or the <a href='https://github.com/jjspetz/Health-Inspection-Data'>
+      code</a> on github.
+    </p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/GWyWWhNRD6c?start=1316" frameborder="0" allowfullscreen></iframe>
+  </div>
+</main>
+{% endblock %}
