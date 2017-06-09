@@ -85,6 +85,23 @@ border-radius: 10px;
 #warnkey {
   background: yellow;
 }
+.projectBlurb {
+  text-align: justify;
+  padding: 0 20px;
+  margin: 1% auto;
+  font-size: 14pt;
+  background: lightgray;
+  width: 70%;
+  border: 3px solid #D90368;
+  border-radius: 5px;
+}
+.projectBlurb h3 {
+  text-align: center;
+}
+iframe {
+  display: block;
+  margin: 1em auto;
+}
 
 @media (max-width: 700px) {
   main {
@@ -101,21 +118,13 @@ border-radius: 10px;
   .under-map input {
     max-width: 26%;
   }
-}
-.projectBlurb {
-  text-align: justify;
-  padding: 0 20px;
-  margin: 1% auto;
-  font-size: 14pt;
-  background: lightgray;
-  width: 70%;
-  border: 3px solid #4D99FF;
-  border-radius: 5px;
-}
-.projectBlurb h3 {
-  text-align: center;
-}
-iframe {
-  display: block;
-  margin: 1em auto;
+  .projectBlurb {
+    padding: 0 5px;
+    font-size: 12pt;
+    width: calc(100% - 10px);
+  }
+
+  iframe {
+    width: 100%;
+  }
 }
