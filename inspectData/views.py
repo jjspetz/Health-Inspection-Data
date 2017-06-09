@@ -17,3 +17,6 @@ def results(request, facility_name):
     rst = get_object_or_404(RestHealth, facility_name=facility_name)
     return render(request, 'inspectData/details.html',
                   {'pass/fail': rst.inspection_status})
+
+def about (request):
+    return TemplateResponse(request, 'about.html', {})

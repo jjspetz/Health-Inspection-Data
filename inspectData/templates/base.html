@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport"></meta>
 <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
-<title>{% block title %}Health Inspection Results{% endblock %}</title>
+<title>{% block title %}{% endblock %}</title>
 <link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}">
 
 <script type="text/javascript" src="https://maps.google.com/maps/api/js?v=3&key=AIzaSyAPfR_pZpC1Qkw_CaMHPQb3nUpeB975Lnw"></script>
@@ -11,33 +11,21 @@
 </head>
 
 <body>
-  <main>
-    <h1>Do I Want to Eat There?</h1>
-    <div id="googft-mapCanvas"></div>
-    <div class='under-map'>
-      <div class="map-filters">
-        <div>Map Filters</div>
-        <div class='inspection-status-filter'>
-          <div>
-            Passed: <input id='pass' onclick="filterMap()" type='checkbox' checked>
-            Failed: <input id='fail' onclick="filterMap()" type='checkbox' checked>
-          </div>
-        </div>
-        <div class='restaurant-filter'>
-          Restaurant:
-          <input type="text" id="search-string_0">
-          <input class="button" type="button" onclick="filterMap()" value="Filter">
-        </div>
-      </div>
-    </div>
+   <!-- navbar -->
+   <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about/">About</a></li>
+    <li>
+      <a href="http://www.houstontx.gov/health/Food/food_establishment_complaint.html" target='_blank'>
+        Make a Complaint
+      </a>
+    </li>
+  </ul>
 
-  </main>
-  <div id='legend'>
-    <h3>Map Key</h3>
-    passed <div class='keys' id='passkey'></div><br>
-    failed <div class='keys' id='failkey'></div><br>
-    questionable <div class='keys' id='warnkey'></div>
-  </div>
+  <!-- main page -->
+  {% block main %}
+
+  {% endblock %}
 </body>
 <script src="{% static 'JS/main.js' %}"></script>
 </html>

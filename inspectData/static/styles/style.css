@@ -1,3 +1,10 @@
+a:link, a:visited, a:active {
+  color: #D90368;
+  text-decoration: none;
+}
+a:hover {
+  background-color: whitesmoke;
+}
 body {
   margin: 0;
   text-align: center;
@@ -17,7 +24,22 @@ main {
   width: 80%;
   margin: 1em auto;
 }
-.under-map {
+ul {
+    font-size: 20px;
+    text-align: right;
+    list-style-type: none;
+    margin: 0;
+    padding:10px 15px;
+    background: lightgray;
+    border-bottom: 2px solid #D90368;
+}
+li {
+  display: inline;
+}
+li a {
+  padding: 10px 15px;
+}
+.basicView {
   padding: 6px 0;
   margin: 1% auto;
   font-size: 20pt;
@@ -44,7 +66,7 @@ border-radius: 10px;
   padding: 1%;
   font-size: 12pt;
 }
-#legend h3{
+#legend h3 {
   text-align: center;
   margin: 0;
 }
@@ -76,7 +98,7 @@ border-radius: 10px;
     width: calc(100% - 6px);
     font-size: 14pt;
   }
-  .under-map input{
+  .under-map input {
     max-width: 26%;
   }
 }

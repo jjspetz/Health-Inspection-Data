@@ -1,1 +1,33 @@
 {% extends "base.html" %}{% load static %}
+
+{% block title %}Health Inspection Results{% endblock %}
+
+{% block main %}
+<main>
+
+  <h1>Do I Want to Eat There?</h1>
+  <div id="googft-mapCanvas"></div>
+  <div class='basicView'>
+    <div class="map-filters">
+      <div>Map Filters</div>
+      <div class='inspection-status-filter'>
+        <div>
+          Passed: <input id='pass' onclick="filterMap()" type='checkbox' checked>
+          Failed: <input id='fail' onclick="filterMap()" type='checkbox' checked>
+        </div>
+      </div>
+      <div class='restaurant-filter'>
+        Restaurant:
+        <input type="text" id="search-string_0">
+        <input class="button" type="button" onclick="filterMap()" value="Filter">
+      </div>
+    </div>
+  </div>
+</main>
+<div id='legend'>
+  <h3>Map Key</h3>
+  passed <div class='keys' id='passkey'></div><br>
+  failed <div class='keys' id='failkey'></div><br>
+  questionable <div class='keys' id='warnkey'></div>
+</div>
+{% endblock %}
