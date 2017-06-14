@@ -1,4 +1,4 @@
-// background stuff
+// grabs a random picture and sets it as the background image
 var index = Math.floor(Math.random()*12);
 document.body.style.background =
 "#56d879 url('/static/img/b"+index+".jpg') no-repeat fixed center";
@@ -12,7 +12,7 @@ pass = document.getElementById('pass');
 fail = document.getElementById('fail');
 
 
-// map stuff
+// Sets up and renders the map
 function initialize() {
   google.maps.visualRefresh = true;
   var isMobile = (navigator.userAgent.toLowerCase().indexOf('android') > -1) ||
@@ -30,22 +30,22 @@ function initialize() {
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
 
-  // create legend
+  // creates legend
   var legend = document.createElement('div');
   legend.setAttribute("id", "legend");
   legend.innerHTML = "<h3>Map Key</h3> \
       passed <div class='keys' id='passkey'></div><br> \
-      failed <div class='keys' id='failkey'></div><br> \
-      questionable <div class='keys' id='warnkey'></div>";
+      failed <div class='keys' id='failkey'></div><br>";
 
+  // renders legend on map
   map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(legend);
 
-
+  // initial view with default layers for map
   layer = new google.maps.FusionTablesLayer({
     map: map,
     heatmap: { enabled: false },
     query: {
-      select: "col10",
+      select: "'Concatenated Address'",
       from: "1u9j3NqGkNprU0b9qNRmMiXBjdszHtjSimgymC49F",
       // old table: 1u9j3NqGkNprU0b9qNRmMiXBjdszHtjSimgymC49F
       // new table: 1MefYGA3xmSv-_C3pNgRGoyWWTtHGioJ5KAA1Y-d3
@@ -61,6 +61,8 @@ function initialize() {
     document.getElementById('legend').style.display = 'none';
   }
 }
+
+// creates additional views when user changes layers
 function filterMap() {
   var whereClause;
   var insert = ["'dummy'"];
@@ -68,7 +70,6 @@ function filterMap() {
   // set up what to filter via pass/fail
   if (pass.checked) {
     insert.push("'small_green'");
-    insert.push("'small_yellow'");
   }
   if (fail.checked) {
     insert.push("'small_red'");
