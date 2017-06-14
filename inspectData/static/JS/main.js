@@ -3,7 +3,6 @@ var index = Math.floor(Math.random()*12);
 document.body.style.background =
 "#56d879 url('/static/img/b"+index+".jpg') no-repeat fixed center";
 document.body.style.backgroundSize = "cover";
-document.body.style.class = '';
 
 // globals
 var layer, pass, fail, map;
@@ -30,7 +29,17 @@ function initialize() {
     zoom: 10,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
-  map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(document.getElementById('legend'));
+
+  // create legend
+  var legend = document.createElement('div');
+  legend.setAttribute("id", "legend");
+  legend.innerHTML = "<h3>Map Key</h3> \
+      passed <div class='keys' id='passkey'></div><br> \
+      failed <div class='keys' id='failkey'></div><br> \
+      questionable <div class='keys' id='warnkey'></div>";
+
+  map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(legend);
+
 
   layer = new google.maps.FusionTablesLayer({
     map: map,
@@ -38,6 +47,8 @@ function initialize() {
     query: {
       select: "col10",
       from: "1u9j3NqGkNprU0b9qNRmMiXBjdszHtjSimgymC49F",
+      // old table: 1u9j3NqGkNprU0b9qNRmMiXBjdszHtjSimgymC49F
+      // new table: 1MefYGA3xmSv-_C3pNgRGoyWWTtHGioJ5KAA1Y-d3
       where: ''
     },
     options: {
