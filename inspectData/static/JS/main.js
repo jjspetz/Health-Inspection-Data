@@ -45,10 +45,9 @@ function initialize() {
     map: map,
     heatmap: { enabled: false },
     query: {
-      select: "'Concatenated Address'",
-      from: "1u9j3NqGkNprU0b9qNRmMiXBjdszHtjSimgymC49F",
+      select: "'concatenatedaddress'",
+      from: "1yC3rHDm0bIgta85JxHdbi6XpY4ES-5FAck0Vw_xl",
       // old table: 1u9j3NqGkNprU0b9qNRmMiXBjdszHtjSimgymC49F
-      // new table: 1MefYGA3xmSv-_C3pNgRGoyWWTtHGioJ5KAA1Y-d3
       where: ''
     },
     options: {
@@ -76,18 +75,18 @@ function filterMap() {
   }
   insert = insert.join(', ');
   console.log(insert);
-  whereClause = "Pass_Fail IN (" + insert + ")"
+  whereClause = "button IN (" + insert + ")"
   console.log(whereClause);
 
   var searchString = document.getElementById('search-string_0').value.replace(/'/g, "\\'");
   if (searchString != '--Select--') {
-    whereClause += " AND FacilityName CONTAINS IGNORING CASE '" + searchString + "'";
+    whereClause += " AND facilityname CONTAINS IGNORING CASE '" + searchString + "'";
   }
 
   layer.setOptions({
     query: {
-      select: "'Concatenated Address'",
-      from: "1u9j3NqGkNprU0b9qNRmMiXBjdszHtjSimgymC49F",
+      select: "'concatenatedaddress'",
+      from: "1yC3rHDm0bIgta85JxHdbi6XpY4ES-5FAck0Vw_xl",
       where: whereClause
     },
     options: {
